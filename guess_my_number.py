@@ -3,21 +3,36 @@ import random
 MIN = 0
 MAX = 1000
 
-if __name__ == '__main__':
-    number_to_guess = random.randint(MIN, MAX)
-    print('Hey! try to guess a number between %d and %d'%(MIN,MAX)
+class guessmachine():
 
-    while (True):
+    def __init__(self):
+        self.number_to_guess = rando.randint(MIN,MAX)
+        self.number_of_attempt = 0
+
+    def guess(self, num):
+        self.number_of_attempt+=1
+        if num < self.number_to_guess:
+            return 'too low'
+        elif num > self.number_to_guess:
+            return 'too high'
+        else :
+            return 'found'
+
+
+if __name__ == '__main__':
+    guess_nachine = guessmachine()
+    print('Hey! try to guess a number between %d and %d'%(MIN,MAX))
+
+    while True :
         user_input = input('your guess?')
         try :
             user_attempt = int(user_input)
-            if user_attempt == number_to_guess:
-                print('fantastic, you could find the number')
+            result = guess_nachine.guess(user_attempt)
+            if result == 'found':
+                print('fantastic, you could find the number '
+                'I had in mind %d attempts'% guess_nachine.number_of_attempt)
                 break
-            elif user_attempt < number_to_guess:
-                print('too low)'
             else:
-                print('too high')
+                print(result)
         except ValueError:
             print ('you joker... that was not an integer')
-            
