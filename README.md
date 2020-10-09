@@ -6,7 +6,7 @@ Jeu interactif qui permet a un humain de deviner un nombre choisi aléatoirement
 
 Pour l'essayer, lancez :
 
-```python
+```bash
 ./guess_my_number.py
 ```
 
@@ -14,5 +14,6 @@ Pour l'essayer, lancez :
 
 l'ordinateur trouve le chiffre grace à un algorithme de dichotomie, soit en max 10 coups!!!
 
-```
+```bash
 ./computer_player.py
+```
